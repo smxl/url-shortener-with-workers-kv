@@ -24,7 +24,7 @@ Tips: you can change YuhURLs as what you want, remember replace in code
 
 Test
 
-${protocol}//${hostname}/yuh
+```${protocol}//${hostname}/yuh```
 
 ## URL Shortener Lite
 
