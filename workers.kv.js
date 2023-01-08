@@ -64,8 +64,13 @@ async function handleRequest(request) {
     }
   }
 
-  return new Response(`
-    <h1>URL Shortener</h1>
+  let html_content = "";
+  let html_style = `body,html{width:100%;height:100%}
+body{padding:0; margin:0 !important}
+body {background: linear-gradient(to bottom, #000 0%, #233 100%)}
+#container {display: flex;flex-direction:column;align-items: center;justify-content: center;height: 100%;color:white;font-family:sans-serif}`;
+
+  html_content += `<h1>URL Shortener</h1>
     <h2>Pre</h2>
     <pre>Cloudflare account & familiarity with Cloudflare Workers and the Cloudflare Workers Key-Value store.</pre>
     <h2>Install</h2>
@@ -81,7 +86,21 @@ async function handleRequest(request) {
     2. Open in Browser <a href="${protocol}//${hostname}/?key=yuh&url=http://example.com">${protocol}//${hostname}/?key=yuh&url=http://example.com</a></p>
     <h4>Test</h4>
     <pre>${protocol}//${hostname}/yuh</pre>
-  `, {
-    headers: { "Content-Type": "text/html" }
+  `;
+  let html = `<!DOCTYPE html>
+<head>
+<title>URL Shortener with Workers KV</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+</head>
+<body>
+<style>${html_style}</style>
+<div id="container">
+  ${html_content}
+</div>
+</body></html>`;
+  return new Response(html, {
+    headers: {
+      "content-type": "text/html;charset=UTF-8",
+    },
   });
 }
