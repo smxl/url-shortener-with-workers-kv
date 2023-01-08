@@ -19,7 +19,7 @@ Tips: you can change YuhURLs as what you want, remember replace in code
 
 ### Usage
 
-1. $ curl ${protocol}//${hostname}/?key=yuh&url=http://example.com
+1. ```$ curl ${protocol}//${hostname}/?key=yuh&url=http://example.com```
 2. Open in Browser [${protocol}//${hostname}/?key=yuh&url=http://example.com](${protocol}//${hostname}/?key=yuh&url=http://example.com)
 
 Test
