@@ -1,7 +1,7 @@
 # URL Shortener
 
-##  Url Shortener with Workers KV
-Url Shortener with Workers KV, Custom Key with searchParams
+##  URL Shortener with Workers KV
+URL Shortener with Workers KV, Custom Key with searchParams
 
 ### Pre
 
