@@ -72,22 +72,21 @@ body{background:linear-gradient(to bottom, #111 30%, #222 90%)}
 .codeblock {font-family:monospace;color:#000;background-color:#e2e2e2;padding:2px}`;
 
   html_content += `<h1>URL Shortener</h1>
-    <h2>Pre</h2>
-    <pre>Cloudflare account & familiarity with Cloudflare Workers and the Cloudflare Workers Key-Value store.</pre>
-    <h2>Install</h2>
-    <p>1. Create a namespace YuhURLs in 'Workers - KV'</br>
-    2. Set 'Workers - Settings - Variables - KV Namespace Bindings'</br>
-    3. Go to the "Workers" tab and click "Create a Worker"</br>
-    4. Paste the workers.yurl.js code into the editor</br>
-    5. Click "Save and deploy"</br>
-    6. Set Triggers - Custom Domains or Routers</br>
-    Tips: you can change YuhURLs as what you want, remember replace in code</p>
-    <h3>Usage</h3>
-    <p>1. <code class="codeblock">$ curl '${protocol}//${hostname}/?key=yuh&url=http://example.com'</code></br>
-    2. Open in Browser <a class="link" href="${protocol}//${hostname}/?key=yuh&url=http://example.com">${protocol}//${hostname}/?key=yuh&url=http://example.com</a></p>
-    <h4>Test</h4>
-    <pre>${protocol}//${hostname}/yuh</pre>
-  `;
+<h2>Pre</h2>
+<pre>Cloudflare account, familiar to Workers & KV</pre>
+<h2>Install</h2>
+<p>1. Create a namespace YuhURLs in 'Workers - KV'</br>
+2. Set 'Workers - Settings - Variables - KV Namespace Bindings'</br>
+3. Go to the "Workers" tab and click "Create a Worker"</br>
+4. Paste the workers.yurl.js code into the editor</br>
+5. Click "Save and deploy"</br>
+6. Set Triggers - Custom Domains or Routers</br>
+Tips: you can change YuhURLs as what you want, remember replace in code</p>
+<h3>Usage</h3>
+<p>1. <code class="codeblock">$ curl '${protocol}//${hostname}/?key=yuh&url=http://example.com'</code></br>
+2. Open in Browser <a class="link" href="${protocol}//${hostname}/?key=yuh&url=http://example.com">${protocol}//${hostname}/?key=yuh&url=http://example.com</a></p>
+<h4>Test</h4>
+<pre>${protocol}//${hostname}/yuh</pre>`;
   let html = `<!DOCTYPE html>
 <head>
 <title>URL Shortener with Workers KV</title>
@@ -96,7 +95,7 @@ body{background:linear-gradient(to bottom, #111 30%, #222 90%)}
 <body>
 <style>${html_style}</style>
 <div id="container">
-  ${html_content}
+${html_content}
 </div>
 </body></html>`;
   return new Response(html, {
